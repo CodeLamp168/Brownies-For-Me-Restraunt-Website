@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
+
 * {
+    font-family:'Charm';
     box-sizing:border-box;
     margin:0;
     padding:0;
@@ -6,19 +9,18 @@
 
 body {
     display:grid;
-    gap:1em;
-    place-content: center;
 
+    place-content: center;
+    background: rgb(255,252,243);
+    background: linear-gradient(155deg, rgba(255,252,243,1) 44%, rgba(255,255,250,1) 100%); 
 }
 
 .main-content-container {
     min-height:100vh;
     
+    
     .landing-page {
-
         display:grid;
-        box-shadow: 0 4px 10px -3px rgba(12, 12, 12, 0.397);
-       
         .landing-page-content-wrapper {
             display: grid; 
             grid-auto-flow:row;
@@ -48,18 +50,22 @@ body {
     gap:1em;
 
     h2 {
-        font-size: clamp(2rem, 1.6rem + 2vw, 2.75rem);
-        width:310px;
-        padding-right:1em;
+        font-size: clamp(2rem, 1.6rem + 2vw, 3.75rem);
+        max-width:450px;
+        padding-right:0.5em;
+        line-height:55px;
+        color:rgb(0, 0, 0);
+        text-shadow: 0px 1px 2px  rgb(255, 255, 255);
     }
 
     p {
-        padding:0em 2em 3em 0em;
+        padding:1em 5em 0em 0em;
         font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
         line-height: 35px;
         text-indent: 2px;
         padding-bottom:1em;
         white-space:pre-line;
+        
 
     }
 
@@ -72,25 +78,58 @@ body {
     }
 }
 
+.landing-page-image-display-wrap {
+
+    position:relative;
+    overflow:hidden;
+
+    .landing-page-gallery {
+        position:relative;
+        height:100%;
+
+        .landing-page-img {
+            position:absolute;
+            width:100%;
+            height:150%;
+            left:0;
+            top:0;
+            background:url('./display-assets/honey-yanibel-minaya-cruz-fPWxYxfBVYM-unsplash.jpg');
+            background-position: center;
+            background-size:cover;
+            background-repeat:no-repeat;
+
+        }
+    }
+}
 
 
 @media(min-width:920px){
 
+    .main-content-container {
+        max-width:1900px;
+    }
+
 
     .landing-page {
-        height:450px;
+        height:60%;
         grid-template-columns:auto;
-        grid-template-rows:minmax(420px, 100%); 
 
        
         .landing-page-content-wrapper {
             display: grid; 
-            grid-auto-columns: 1fr; 
-            grid-template-columns: 0.6fr 1.1fr; 
-            grid-template-rows:auto; 
+            grid-template-columns:1fr 2fr;
             grid-template-areas: 
-              ". ."; 
+              "a b"; 
+
        }
+    }
+
+    .landing-page-image-display-wrap {
+        grid-area: 'b';
+    }
+
+    .landing-page-text-content {
+        grid-area: 'a'
     }
     
 }
@@ -98,10 +137,12 @@ body {
 
     .landing-page-text-content{
         order:2;
+        box-shadow: 0 4px 10px 10px rrgba(12, 12, 12, 0.411)
     }
 
     .landing-page-image-display-wrap{
         order:1;
+
     }
 }
 
@@ -110,6 +151,7 @@ body {
     display:flex;
     align-items: center;
     justify-content: center;
+    padding:0.8em 0em;
 
     .mobile-display{
         display:none;
