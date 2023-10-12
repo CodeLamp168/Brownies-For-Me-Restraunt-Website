@@ -26,7 +26,6 @@ body {
 
         .landing-page-text-content {
             min-height:320px;
-            padding:1em;
             background-color:rgb(240, 209, 34);
         
         }
@@ -41,10 +40,42 @@ body {
     }
 }
 
-@media(min-width:920px){
-.main-content-container {
-    margin:10px;
+.landing-page-text-content {
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    padding:3em 1em;
+    gap:1em;
+
+    h2 {
+        font-size: clamp(2rem, 1.6rem + 2vw, 2.75rem);
+        width:310px;
+        padding-right:1em;
+    }
+
+    p {
+        padding:0em 2em 3em 0em;
+        font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
+        line-height: 35px;
+        text-indent: 2px;
+        padding-bottom:1em;
+        white-space:pre-line;
+
+    }
+
+
+
+    small {
+        position:absolute;
+        bottom:5px;
+        left:10px;
+    }
 }
+
+
+
+@media(min-width:920px){
+
 
     .landing-page {
         height:450px;
@@ -55,7 +86,7 @@ body {
         .landing-page-content-wrapper {
             display: grid; 
             grid-auto-columns: 1fr; 
-            grid-template-columns: 0.5fr 1.1fr; 
+            grid-template-columns: 0.6fr 1.1fr; 
             grid-template-rows:auto; 
             grid-template-areas: 
               ". ."; 
