@@ -31,29 +31,56 @@ body {
   position: relative;
   min-height: 280px;
 }
+.main-content-container .store-section {
+  height: auto;
+  padding: 1em 10px;
+  height: auto;
+}
+.main-content-container .store-section h2 {
+  margin: 1em 0em;
+}
+.main-content-container .store-section .store-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.store-item {
+  width: 300px;
+  height: 370px;
+  background-image: url("./display-assets/aneta-voborilova-OwGfGCoXoJY-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.37);
+  position: relative;
+}
+.store-item .item-name {
+  position: Absolute;
+  bottom: 5px;
+  left: 10px;
+}
 
 .landing-page-text-content {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 3em 1em;
-  gap: 1em;
+  padding: 1em;
 }
 .landing-page-text-content h2 {
   font-size: clamp(2rem, 1.6rem + 2vw, 3.75rem);
   max-width: 450px;
-  padding-right: 0.5em;
-  line-height: 55px;
   color: rgb(0, 0, 0);
   text-shadow: 0px 1px 2px rgb(255, 255, 255);
 }
 .landing-page-text-content p {
   padding: 1em 5em 0em 0em;
   font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
-  line-height: 35px;
-  text-indent: 2px;
-  padding-bottom: 1em;
+  text-indent: 1px;
   white-space: pre-line;
+  margin-bottom: 1em;
 }
 .landing-page-text-content small {
   position: absolute;
@@ -83,10 +110,10 @@ body {
 
 @media (min-width: 920px) {
   .main-content-container {
-    max-width: 1900px;
+    max-width: 1920px;
   }
   .landing-page {
-    height: 60%;
+    height: 550px;
     grid-template-columns: auto;
   }
   .landing-page .landing-page-content-wrapper {
@@ -99,6 +126,34 @@ body {
   }
   .landing-page-text-content {
     grid-area: "a";
+  }
+  .landing-page-text-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 3em 1em;
+    gap: 1em;
+  }
+  .landing-page-text-content h2 {
+    font-size: clamp(2rem, 1.6rem + 2vw, 3.75rem);
+    max-width: 450px;
+    padding-right: 0.5em;
+    line-height: 55px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 1px 2px rgb(255, 255, 255);
+  }
+  .landing-page-text-content p {
+    padding: 1em 5em 0em 0em;
+    font-size: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
+    line-height: 35px;
+    text-indent: 2px;
+    padding-bottom: 1em;
+    white-space: pre-line;
+  }
+  .landing-page-text-content small {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
   }
 }
 @media (max-width: 919px) {
