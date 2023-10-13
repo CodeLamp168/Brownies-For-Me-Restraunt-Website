@@ -85,4 +85,8 @@ body {
   position: absolute;
   bottom: -10px;
   left: 0;
+}
+.landing-page-store-items .store-gallery {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
