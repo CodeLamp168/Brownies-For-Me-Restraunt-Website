@@ -67,7 +67,7 @@ body {
 
 .header-text {
   padding: 1em;
-  background-color: #ffe9a7;
+  background-color: #eec54a;
 }
 .header-text .text-box h2 {
   font-size: 35px;
@@ -129,6 +129,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 5px;
+  height: 340px;
 }
 .store-item img {
   width: 100%;
