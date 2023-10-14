@@ -10,13 +10,10 @@
 body {
   background: #fff7df;
   overflow-x:hidden;
-}
+  position:relative;
+  z-index:1;
+}  
 
-.main-nav {
-  position:sticky;
-  width:100%;
-  height:40px;
-}
 
 .landing-page {
   overflow-x:hidden;
@@ -170,5 +167,157 @@ body {
           margin-bottom:1em;
           text-indent: 5px;
       }
+  }
+}
+
+
+.main-nav-box {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width:100%;
+  height:40px;
+  padding:0em 2em;
+
+  z-index:0;
+
+
+
+}
+
+.nav-items a {
+  text-decoration: none;
+  color:black;
+  transition:transform 100ms ease-in-out;
+
+  &:hover {
+    transform:scale(1.05)
+  }
+}
+
+.desktop-nav {
+  display:none;
+  width:300px;
+
+  ul {
+    display:flex;
+    justify-content: space-around;
+  }
+  @media(min-width:1090px){
+    display:block;
+  }
+}
+
+.mobile-nav-box {
+  position:absolute;
+  top:0;
+  left:0;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color:#fff7df;
+  width:100%;
+  height:100%;
+  gap:2em;
+  z-index:-1;
+  opacity:0;
+
+  h2 {
+    border-bottom:1px solid black;
+    padding-bottom:10px;
+  }
+
+  .mobile-nav-items ul {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+
+    gap:1em;
+  }
+
+  @media(min-width:1090px){
+    display:none;
+  }
+}
+
+
+.mobile-active {
+  z-index:3;
+  animation:fadeIn 0.5s;
+  opacity:1;
+
+  .hamburger-btn-mobile {
+    height:30px;
+    width:30px;
+    .bar {
+      position:absolute;
+    }
+    .bar:nth-child(1) {
+      transform:rotate(40deg);
+      bottom:10px;
+   }
+
+   .bar:nth-child(2){
+    display:none;
+   }
+
+   .bar:nth-child(3){
+    transform:rotate(-40deg);
+    bottom:10px;
+   }
+ }
+}
+
+
+.hamburger-btn-mobile {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position:relative;
+
+  width:22px;
+  height:18px;
+  cursor:pointer;
+
+  .bar {
+    content:'';
+    width:100%;
+    height:2px;
+    border-radius:10px;
+    background-color:black;
+  }
+
+  @media(min-width:1090px){
+    display:none;
+  }
+
+  transition:transform 100ms ease-in;
+
+  &:hover {
+    transform:scale(1.1)
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

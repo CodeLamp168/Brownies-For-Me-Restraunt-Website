@@ -9,12 +9,8 @@
 body {
   background: #fff7df;
   overflow-x: hidden;
-}
-
-.main-nav {
-  position: sticky;
-  width: 100%;
-  height: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .landing-page {
@@ -145,4 +141,135 @@ body {
   border-bottom: 1px solid black;
   margin-bottom: 1em;
   text-indent: 5px;
+}
+
+.main-nav-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  padding: 0em 2em;
+  z-index: 0;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: black;
+  transition: transform 100ms ease-in-out;
+}
+.nav-items a:hover {
+  transform: scale(1.05);
+}
+
+.desktop-nav {
+  display: none;
+  width: 300px;
+}
+.desktop-nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 1090px) {
+  .desktop-nav {
+    display: block;
+  }
+}
+
+.mobile-nav-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff7df;
+  width: 100%;
+  height: 100%;
+  gap: 2em;
+  z-index: -1;
+  opacity: 0;
+}
+.mobile-nav-box h2 {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.mobile-nav-box .mobile-nav-items ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
+}
+@media (min-width: 1090px) {
+  .mobile-nav-box {
+    display: none;
+  }
+}
+
+.mobile-active {
+  z-index: 3;
+  animation: fadeIn 0.5s;
+  opacity: 1;
+}
+.mobile-active .hamburger-btn-mobile {
+  height: 30px;
+  width: 30px;
+}
+.mobile-active .hamburger-btn-mobile .bar {
+  position: absolute;
+}
+.mobile-active .hamburger-btn-mobile .bar:nth-child(1) {
+  transform: rotate(40deg);
+  bottom: 10px;
+}
+.mobile-active .hamburger-btn-mobile .bar:nth-child(2) {
+  display: none;
+}
+.mobile-active .hamburger-btn-mobile .bar:nth-child(3) {
+  transform: rotate(-40deg);
+  bottom: 10px;
+}
+
+.hamburger-btn-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 22px;
+  height: 18px;
+  cursor: pointer;
+  transition: transform 100ms ease-in;
+}
+.hamburger-btn-mobile .bar {
+  content: "";
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: black;
+}
+@media (min-width: 1090px) {
+  .hamburger-btn-mobile {
+    display: none;
+  }
+}
+.hamburger-btn-mobile:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
