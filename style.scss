@@ -39,15 +39,16 @@ body {
 }
 
 .main-header {
+  position:absolute;
   display:flex; 
   width:100%;
   justify-content: end;
+  align-items: center;
   padding:1em;
-
-
-  h3 {
+  
+  h4 {
     text-transform:uppercase;
-    letter-spacing:2px;
+    letter-spacing:1px;
   }
 }
 
@@ -87,8 +88,57 @@ section {
 
 .hero {
   height:100vh;
-  border:1px solid red;
+
+  .hero-content-box {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100%;
+
+    .text-box {
+      max-width:950px;
+    }
+  }
 }
+
+.hero-content-box {
+  .text-box {
+    text-align: center;
+    h1 {
+      font-size:52px;
+    }
+    p {
+      font-size:17px;
+    }
+
+    @media(min-width:600px){
+      text-align: start;
+      padding-left:2em;
+      h1 {
+        font-size:64px;
+      }
+      p {
+        font-size:19px;
+        inline-size: 580px;
+      }
+    }
+    @media(min-width:1200px){
+      padding-left:4em;
+      h1 {
+        font-size:74px;
+      }
+      p {
+        font-size:25px;
+        inline-size: 750px;
+      }
+    }
+
+    @media(min-width:1500px){
+      padding-left:10em;
+    }
+  }
+}
+
 
 .about {
   background:white;
