@@ -87,6 +87,7 @@ body {
 .nav-bar-content ul li {
   padding: 15px 10px;
   font-size: 20px;
+  cursor: pointer;
 }
 .nav-bar-content ul li a {
   color: white;
@@ -99,17 +100,24 @@ body {
   align-items: center;
   background-color: black;
   padding: 10px;
-  right: 15px;
+  right: 30px;
   gap: 1em;
   z-index: 1;
   cursor: pointer;
+}
+.nav-btn-container h4 {
+  transition: color 300ms ease-in-out;
+}
+
+.nav-btn-container:hover h4 {
+  color: rgb(91, 104, 218);
 }
 
 .nav-burger {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 30px;
+  width: 25px;
   height: 25px;
 }
 .nav-burger .nav-bar-design {
@@ -127,6 +135,7 @@ body {
 .nav-bar-head .exit-nav-design {
   display: flex;
   position: relative;
+  cursor: pointer;
   width: 25px;
   height: 25px;
   transition: transform 100ms ease-in;
@@ -333,7 +342,7 @@ section {
 }
 
 .store {
-  background: white;
+  background: rgb(254, 255, 240);
   height: 100%;
 }
 .store .store-header {
@@ -353,13 +362,24 @@ section {
   padding-bottom: 5px;
   border-bottom: 2px dotted white;
 }
+@media (min-width: 900px) {
+  .store .store-header {
+    padding: 10em;
+  }
+}
 .store .store-item-container {
   display: grid;
   place-content: center;
-  grid-template-columns: repeat(1, minmax(320px, 350px));
+  grid-template-columns: repeat(1, 300px);
   grid-template-rows: repeat(2, 450px);
   position: relative;
   top: -20px;
+}
+@media (min-width: 350px) {
+  .store .store-item-container {
+    grid-template-columns: repeat(1, minmax(320px, 350px));
+    grid-template-rows: repeat(2, 450px);
+  }
 }
 @media (min-width: 650px) {
   .store .store-item-container {
@@ -369,10 +389,11 @@ section {
     grid-template-rows: repeat(2, 450px);
   }
 }
-@media (min-width: 1250px) {
+@media (min-width: 900px) {
   .store .store-item-container {
-    top: -50px;
-    grid-template-columns: repeat(2, 320px);
+    top: -100px;
+    grid-template-columns: repeat(2, 420px);
+    grid-template-rows: repeat(2, 550px);
     padding: 1em;
   }
 }
@@ -383,9 +404,19 @@ section {
   transition: box-shadow 200ms ease-in, transform 200ms ease-in-out;
 }
 .store .product-item:hover {
-  z-index: 10;
-  transform: scale(1.01);
-  box-shadow: 0px 0px 5px 5px rgba(39, 48, 126, 0.473);
+  z-index: 5;
+  transform: scale(1.005);
+  box-shadow: 0px 0px 5px 5px rgba(39, 48, 126, 0.26);
+}
+.store .product-item .store-description {
+  position: absolute;
+  bottom: 2em;
+  padding: 1em;
+  color: white;
+  background-color: black;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 5;
 }
 .store .product-item img {
   width: 100%;
