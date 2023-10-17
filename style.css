@@ -71,6 +71,7 @@ body {
   background: rgb(18, 18, 29);
   box-shadow: 0px 5px 10px 3px rgba(255, 255, 255, 0.103);
   transition: transform 300ms ease-in;
+  z-index: 10;
 }
 
 .nav-bar-content {
@@ -94,8 +95,13 @@ body {
 
 .nav-btn-container {
   display: flex;
+  position: fixed;
   align-items: center;
+  background-color: black;
+  padding: 10px;
+  right: 15px;
   gap: 1em;
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -103,8 +109,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 25px;
 }
 .nav-burger .nav-bar-design {
   width: 100%;
@@ -328,5 +334,60 @@ section {
 
 .store {
   background: white;
-  height: 100vh;
+  height: 100%;
+}
+.store .store-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+  padding: 4em;
+  text-align: center;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+}
+.store .store-header h2 {
+  padding-bottom: 5px;
+  border-bottom: 2px dotted white;
+}
+.store .store-item-container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(1, minmax(320px, 350px));
+  grid-template-rows: repeat(2, 450px);
+  position: relative;
+  top: -20px;
+}
+@media (min-width: 650px) {
+  .store .store-item-container {
+    top: -30px;
+    padding: 0em;
+    grid-template-columns: repeat(2, 320px);
+    grid-template-rows: repeat(2, 450px);
+  }
+}
+@media (min-width: 1250px) {
+  .store .store-item-container {
+    top: -50px;
+    grid-template-columns: repeat(2, 320px);
+    padding: 1em;
+  }
+}
+.store .product-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  transition: box-shadow 200ms ease-in, transform 200ms ease-in-out;
+}
+.store .product-item:hover {
+  z-index: 10;
+  transform: scale(1.01);
+  box-shadow: 0px 0px 5px 5px rgba(39, 48, 126, 0.473);
+}
+.store .product-item img {
+  width: 100%;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */
