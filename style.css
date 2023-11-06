@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   z-index: -100;
@@ -87,13 +91,13 @@ body {
   padding: 15px 10px;
   font-size: 20px;
   cursor: pointer;
-  color: white;
-  transition: color 300ms ease-in-out;
 }
 .nav-bar-content ul li a {
   text-decoration: none;
+  color: white;
+  transition: color 300ms ease-in-out;
 }
-.nav-bar-content ul li:hover {
+.nav-bar-content ul li:hover a {
   color: rgb(91, 104, 218);
 }
 
