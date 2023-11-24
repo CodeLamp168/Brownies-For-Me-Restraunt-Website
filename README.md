@@ -1,6 +1,6 @@
 # Brownies For Me App Documentation
 
-![webpage display](display-assets/insert-img)
+![Webpage Display](Brownies%20For%20Me.png)
 
 ## Overview
 
