@@ -9,7 +9,7 @@ All content within is lorem ipsum. No actual info is displayed other than a titl
 
 ## Technologies Used
 
-- **HTML**
+- **HTML** 
 - **CSS/SCSS**
 - **JavaScript**
 - **[Unsplash](https://unsplash.com/)**
@@ -18,8 +18,8 @@ All content within is lorem ipsum. No actual info is displayed other than a titl
 
 The code follows a modular structure, making it easy to understand and maintain. Key components include:
 
-- **HTML Structure**: Divided into sections like Hero, About, Store, and Contact/Footer, ensuring a clear separation of content.
-- **SCSS Mixins**: Utilized for common styling patterns, promoting consistency and simplifying updates.
-- **JavaScript Interactivity**: Implemented to control the navigation menu, providing a seamless user experience.
+- **Web Strucutre**: Divided into sections like Hero, About, Store, and Contact/Footer, ensuring a clear separation of content.
+- **Mixins**: Utilized for common styling patterns, promoting consistency and simplifying updates.
+- **Simple Nav Interactivity**: Implemented to control the navigation menu, providing a seamless user experience.
 - **Unsplash**: Utilized template images for Hero section, store section, and contact section
 
